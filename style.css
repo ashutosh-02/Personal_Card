@@ -1,0 +1,122 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: #1A202C;
+}
+
+.card {
+    width: 300px;
+    height: 400px;
+    perspective: 1000px;
+}
+
+.card-front, .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.card-front {
+    background: linear-gradient(135deg, #00C6FF, #0072FF);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.profile-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 4px solid #fff;
+    scale: 1.2;
+}
+
+.card-front h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.card-front p {
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+.skill-bar {
+    background-color: #f3f3f3;
+    border-radius: 20px;
+    padding: 3px;
+    width: 80%;
+    margin: 10px 0;
+}
+
+.skill {
+    background-color: #00C6FF;
+    height: 20px;
+    border-radius: 20px;
+    transition: width 1s ease-in-out;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.card:hover .card-front {
+    background: linear-gradient(135deg, #11998E, #38EF7D);
+}
+
+.social-icon.linkedin:hover {
+    background: #0e76a8;
+}
+
+.social-icon.portfolio:hover {
+    background: #1DA1F2;
+}
+
+.card:hover {
+    box-shadow: 0 12px 24px rgba(0, 255, 150, 0.4); 
+    transform: rotateY(180deg);
+    transition: all ease 1s;
+}
+
+.card-front h2, .card-front p {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); 
+}
+
+.card {
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+}
+
+.card-back {
+    background: #283048;
+    transform: rotateY(180deg);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-left: 25px;
+}
+
+.card:hover .skill {
+    background-color: #38EF7D;
+}
